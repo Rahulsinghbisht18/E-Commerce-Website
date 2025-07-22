@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mai Bhagirathi Steel And Fabrication Worker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .hero-slider { position: relative; height: 400px; overflow: hidden; }
+    .slides { position: relative; height: 100%; }
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active { opacity: 1; z-index: 1; }
+    .slide-content {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .products {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product input[type="number"] {
+      margin-top: 10px;
+      padding: 5px;
+      width: 60px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    .contact {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    .contact h3 {
+      margin-bottom: 20px;
+    }
+    .contact form input,
+    .contact form textarea {
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact form button {
+      background: #e67e22;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #cart table {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      overflow: hidden;
+      border-collapse: collapse;
+    }
+    #cart th, #cart td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    #cart th { background: #eee; }
+    #cart tfoot td {
+      font-weight: bold;
+      background: #f0f0f0;
+    }
+    #checkout-btn {
+      margin-top: 20px;
+      background: green;
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mai Bhagirathi Steel And Fabrication Worker</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#products">Products</a>
+  <a href="#cart">Cart</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero-slider">
+  <div class="slides">
+    <div class="slide active" style="background-image: url('19.jpg');">
+      <div class="slide-content">
+        <h2>Custom Steel Fabrication</h2>
+        <p>High-quality steel products and custom fabrication</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('7.jpg');">
+      <div class="slide-content">
+        <h2>Expert Welding Services</h2>
+        <p>Reliable welding work for industrial and home projects</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('21.jpg');">
+      <div class="slide-content">
+        <h2>Construction Materials</h2>
+        <p>We supply bricks, cement and blocks</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="product">
+    <img src="6.jpg" alt="Fabrication Work">
+    <h3>Fabrication Work</h3>
+    <button onclick="window.location.href='fabrication.html'">Enqiury</button>
+  </div>
+  <div class="product">
+    <img src="14.jpeg" alt="Cement">
+    <h3>Cement</h3>
+    <p>Price: ₹400</p>
+    <input type="number" value="1" min="1">
+    <button onclick="addToCart('Cement', 400, this)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="11.jpg" alt="Cement Blocks">
+    <h3>Cement Blocks</h3>
+    <p>Price: ₹30</p>
+    <input type="number" value="1" min="1">
+    <button onclick="addToCart('Cement Blocks', 30, this)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="8.jpg" alt="Bricks">
+    <h3>Bricks</h3>
+    <p>Price: ₹8</p>
+    <input type="number" value="1" min="1">
+    <button onclick="addToCart('Bricks', 8, this)">Add to Cart</button>
+  </div>
+</section>
+
+<section id="cart" class="contact" style="background:#333;">
+  <h3>Your Shopping Cart</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items"></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" style="text-align:right;">Total:</td>
+        <td id="cart-total">₹0</td>
+      </tr>
+    </tfoot>
+  </table>
+  <button id="checkout-btn" onclick="checkout()">Cashout</button>
+</section>
+
+<section id="contact" class="contact">
+  <h3>Get in Touch</h3>
+  <form>
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Your Email" required><br>
+    <textarea rows="4" placeholder="Your Message" required></textarea><br>
+    <button type="submit">Send Message</button>
+  </form><br>
+  <h2>Contact Us</h2>
+  <p>Phone: +91-7533944147</p>
+  <p>Email: rb6217363@gmail.com</p>
+  <p>Address: Bhagirathi, Bageshwar - 263642, Uttarakhand, India</p>
+</section>
+
+<footer>
+  &copy; 2025 Mai Bhagirathi Steel And Fabrication Worker. All rights reserved.
+</footer>
+
+<script>
+  // Hero Slider
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000);
+
+  // Cart System
+  const cart = [];
+  const cartItemsEl = document.getElementById("cart-items");
+  const cartTotalEl = document.getElementById("cart-total");
+
+  function addToCart(name, price, button) {
+    const qty = parseInt(button.previousElementSibling.value);
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += qty;
+    } else {
+      cart.push({ name, price, quantity: qty });
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    cartItemsEl.innerHTML = "";
+    let total = 0;
+    cart.forEach(item => {
+      const subtotal = item.quantity * item.price;
+      total += subtotal;
+      cartItemsEl.innerHTML += `<tr>
+        <td>${item.name}</td>
+        <td>${item.quantity}</td>
+        <td>₹${item.price}</td>
+        <td>₹${subtotal}</td>
+      </tr>`;
+    });
+    cartTotalEl.innerText = "₹" + total;
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    let summary = "Order Summary:\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+      const subtotal = item.price * item.quantity;
+      total += subtotal;
+      summary += `${item.name} - Qty: ${item.quantity}, ₹${item.price} x ${item.quantity} = ₹${subtotal}\n`;
+    });
+
+    summary += `\nTotal Amount: ₹${total}\n\nThank you for your order!`;
+
+    alert(summary);
+
+    cart.length = 0;
+    renderCart();
+  }
+</script>
+
+</body>
+</html>
